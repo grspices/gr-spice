@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./atropos/atropos.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./assets/img/gr/gr.ico">
+
+    <title>GR Spices</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap');
+    body{
+        background: #E2C99E;
+    }
+    .navheader{
+        background: #c2974b;
+        position: sticky;
+        top: 0;
+        min-height: 100px;
+        width: 100%;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 600;
+        color: white;
+        flex-direction: column;
+        z-index: 1000;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 30px;
+        padding: 20px 30px;
+    }
+    @media(max-width: 768px){
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .grid-container .heading {
+        font-family: 'Times New Roman';
+        font-weight: 800;
+        font-size: 40px;
+        color: #965b36;
+        padding: 0px 10px;
+    }
+    .grid-container .subpara {
+        font-family: 'Times New Roman';
+        font-weight: 400;
+        font-size: 22px;
+        color: #95694e;
+    }
+    
+    .des-atropos{
+        width: 100%;
+        height: auto;
+    }
+    .spice-benefits{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+    .img-container{
+        width: 100%;
+        border-radius: 12px;
+    }
+    .setorder-1{
+        order: 1;
+    }
+    .setorder-2{
+        order: 2;
+    }
+    .things-we-sell{
+        font-family: 'Times New Roman';
+        font-weight: 600;
+        font-size: 80px;
+        color: #965b36;
+        padding: 20px 0px;
+        margin: 0;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    @media(max-width: 768px){
+        .setorder-1{
+            order: 2;
+        }
+
+        .setorder-2{
+            order: 1;
+        }
+    }
+    .spice-quote{
+        font-family: 'Times New Roman';
+        font-weight: 800;
+        font-size: 40px;
+        color: #965b36;
+        margin: 0 20px;
+    }
+</style>
+<body>
+    <nav class="navheader">
+        <div class="d-flex justify-content-center">
+            <img src="./assets/img/gr/gr-logo-removebg.png" alt="" style="width: 400px;height: 150px;">
+        </div>
+    </nav>
+    <section class="px-5">
+        <p id="welcome" style="font-size:40px" class="things-we-sell d-block w-100 text-center">Welcome to GR Spices!</p>
+        <p style="font-size:20px" class="p-0 things-we-sell d-block w-100 text-center">GR Spices! if you want the best</p>
+        <marquee loop="infinite" direction="right" scrollamount="10" >
+            <div class="d-flex">
+                <p class="my-auto" style="font-size:30px;word-spacing:16px;">🌶️ 🍱 🥘 </p>
+                <p class="spice-quote">Spices, of course, are essential.</p>
+                <p class="my-auto" style="font-size:30px;word-spacing:16px;">🥘 🍱 🌶️ </p>
+            </div>
+        </marquee>
+    </section>
+    <section id="item-price" class="px-5">
+        <h2 style="color:#965b36;" class="text-center">🌶️ Today's pricing | आज का भाव 🌶️ </h2>
+        <h3 style="color:#965b36;" class="date mx-auto text-center"></h3>
+        <table class="m-auto table table-hover">
+            <tr class="table-warning">
+                <td>BADI ELACHI (JTCJJ) | बड़ी इलाइची</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>BADI ELACHI (BSJJ) | बड़ी इलाइची</td> 
+                <td class="category-price"></td>
+            </tr>
+            
+            <tr class="table-warning">
+                <td>SHAH JEERA (VIJAY) | शाह जीरा</td> 
+                <td class="category-price"></td>
+            </tr>
+
+            <tr class="table-warning">
+                <td>SHAH JEERA (LOOSE) | शाह जीरा</td> 
+                <td class="category-price"></td>
+            </tr>
+
+            <tr class="table-warning">
+                <td>SONTH (KOCHIN) | सोंठ (कोचीन)</td> 
+                <td class="category-price"></td>
+            </tr>
+
+            <tr class="table-warning">
+                <td>CARAWAY SEEDS | जीरा बीज</td> 
+                <td class="category-price"></td>
+            </tr>
+
+            <tr class="table-warning">
+                <td>PATHARFUL | पत्थर फूल</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>LONG (KADI) | लौंग</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>DALCHINI (EXTRA QUALITY) | दालचीनी</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>SAFEDMIRCHI (KORA) | सफेद मिर्ची</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>JAIFAL (REGULAR P.) | जयफल</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>JAIFAL (BOLD P.) | जयफल</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>DALCHINI CIGAR (LOOSE) | दालचीनी सिगार</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>DALCHINI CIGAR (NET P.) | दालचीनी सिगार</td> 
+                <td class="category-price"></td>
+            </tr>
+            <tr class="table-warning">
+                <td>BADYANFUL (AUTUMN) | बदयानफुल</td> 
+                <td class="category-price"></td>
+            </tr>
+        </table>
+    </section>
+    <section id="spice-we-sell">
+        <div class="grid-container">
+            <div class="setorder-1">
+                <div class="atropos des-atropos sonth">
+                    <div class="atropos-scale">
+                    <div class="atropos-rotate">
+                        <div class="atropos-inner">
+                            <img src="./assets/img/1spice-dry-ginger-2.jpg" data-atropos-offset="-5" class="img-container" />
+                            <div class="text-over bottomAlign1" data-atropos-offset="0" style="bottom: 40px;right: 20px;">
+                                SONTH (KOCHIN)
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spice-benefits setorder-2">
+                <p class="heading animate__animated animate__backInRight">SONTH (KOCHIN)</p>
+                <p class="subpara">
+                    Dried ginger powder is an effective cure for indigestion, sore throat, cold and cough. It is used to treat nausea. Ginger's therapeutic properties help stimulate blood circulation, cleanse the bowels and kidneys, remove toxins from the body and nourish the skin.
+                </p>
+            </div>
+    
+        </div>
+    
+        <div class="grid-container">
+            <div class="spice-benefits">
+                <p class="heading animate__animated animate__backInLeft">Badi Elaichi</p>
+                <p class="subpara">
+                    Badi Elaichi is helpful in managing diabetes as it lowers the blood glucose levels due to its antioxidant properties. The antioxidants present in it also helps in reducing the risk of heart diseases by lowering cholesterol levels. Consuming Badi Elaichi powder twice a day is good for patients with heart disease
+                </p>
+            </div>
+            <div>
+                <div class="atropos des-atropos badiElaichi">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                                <img src="./assets/img/2spice-badi-elachi.jpeg" data-atropos-offset="-5" class="img-container" />
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="left: 30px;">
+                                    BADI
+                                </div>
+                                <div class="text-over-2 bottomAlign2" data-atropos-offset="5" style="left: 30px;">
+                                    ELAICHI
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="grid-container">
+            <div class="setorder-1">
+                <div class="atropos des-atropos dalchini">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                            <!-- put your custom content here -->
+                                <img src="./assets/img/3spice-cinnamon-2.jpg" data-atropos-offset="-5" class="img-container" />                            
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="right:20px;bottom: 20px;">
+                                    DALCHINI
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spice-benefits setorder-2">
+                <p class="heading animate__animated animate__backInRight">Dalchini</p>
+                <p class="subpara">
+                    Badi Elaichi is helpful in managing diabetes as it lowers the blood glucose levels due to its antioxidant properties. The antioxidants present in it also helps in reducing the risk of heart diseases by lowering cholesterol levels. Consuming Badi Elaichi powder twice a day is good for patients with heart disease
+                </p>
+            </div>
+        </div>
+        
+        <div class="grid-container">
+            <div class="spice-benefits">
+                <p class="heading animate__animated animate__backInLeft">Shah Jeera</p>
+                <p class="subpara">
+                    The seeds soothe the digestive tract and relieve colic, cramps, bloating and flatulence by directly acting on the intestinal muscles
+                    The powder of the seeds also helps heal bruises
+                    Improves appetite and is helpful in treating earache
+                    Counters heart irregularity caused by excess digestive gas
+                    Eases menstrual cramps
+                    Increases breast-milk production in nursing mothers
+                    The diluted essential oil is a useful remedy for scabies
+                    Its astringency helps in treating of diarrhea and is used as a gargle for laryngitis 
+                </p>
+            </div>
+            <div>
+                <div>
+                    <div class="atropos des-atropos shahjeera">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <img src="./assets/img/5spice-caraway-seeds-1.jpg" data-atropos-offset="-5" class="img-container" />
+                                    <div class="text-over bottomAlign1"  data-atropos-offset="0" style="left: 20px;">
+                                        SHAH
+                                    </div>
+                                    <div class="text-over-2 bottomAlign2"  data-atropos-offset="5" style="left: 20px;">
+                                        JEERA
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="grid-container">
+            <div class="setorder-1">
+                <div class="atropos des-atropos badiyanPhool">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                                <img src="./assets/img/6spice-star-anise-1.jpg" data-atropos-offset="-5" class="img-container" />
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="right: 20px;">
+                                    BADIYAN
+                                </div>
+                                <div class="text-over-2 bottomAlign2"  data-atropos-offset="5" style="right: 20px;">
+                                    PHOOL
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spice-benefits setorder-2">
+                <p class="heading animate__animated animate__backInRight">Badiyan Phool</p>
+                <p class="subpara">
+                    It has anti-fungal, antibacterial and anti-inflammatory properties and may fight stomach ulcers, keep blood sugar levels in check and reduce symptoms of depression and menopause. Combined with a nutritious diet and healthy lifestyle, anise seed could improve several aspects of your health
+                </p>
+            </div>
+        </div>
+    
+        <div class="grid-container">
+            <div class="spice-benefits">
+                <p class="heading animate__animated animate__backInLeft">Safed Mirchi</p>
+                <p class="subpara">
+                    White pepper, or safed mirch, comes from the same shrub as black pepper but it has some wondrous benefits that its sister spice does not. From helping in digestive problems, dental issues and weight loss to curing minor headaches, cold and cough, white pepper is a storehouse of health benefits.
+                </p>
+            </div>
+            <div>
+                <div class="atropos des-atropos safedMirchi">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                                <img src="./assets/img/7spice-white-pepper-1.jpg" data-atropos-offset="-5" class="img-container" />
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="left: 20px;">
+                                    SAFED
+                                </div>
+                                <div class="text-over-2 bottomAlign2"  data-atropos-offset="5" style="left: 20px;">
+                                    MIRCHI
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="grid-container">
+            <div class="setorder-1">
+                <div class="atropos des-atropos laung">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                                <img src="./assets/img/8spice-clove-2.jpg" data-atropos-offset="-5" class="img-container" />
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="bottom: 40px;right: 20px;">
+                                    LAUNG
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spice-benefits setorder-2">
+                <p class="heading animate__animated animate__backInRight">Laung</p>
+                <p class="subpara">
+                    Improves Digestion
+                    Reduced Inflammation
+                    Improved Liver Function
+                    Fewer Free Radicals
+                    Reduced Ulcers
+                    Boosts Your Immunity
+                    Gives Relief From Toothache
+                    Prevents Headaches
+                    Good For Your Bones
+                    Removes Bacteria Present In the Mouth
+                    Helps In Regulating Blood Sugar Level
+                    Prevents Cancer
+                    Improves Respiratory Health
+                    Relieves Stress
+                    Great For Your Skin And Hair
+                </p>
+            </div>
+        </div>
+        
+    
+        <div class="grid-container">
+            <div class="spice-benefits">
+                <p class="heading animate__animated animate__backInLeft">Jaiphal</p>
+                <p class="subpara">
+                    Nutmeg or jaiphal has strong antibacterial properties and helps boost the immune system. It's said to be rich in dietary fibre and thus keeps the digestive system super-healthy. With a nutty flavour in it, jaiphal is known to be rich in antioxidants and is said to have anti-inflammatory properties as well.
+                </p>
+            </div>
+            <div>
+                <div class="atropos des-atropos jaiphal">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                                <img src="./assets/img/9spice-nutmeg-2.jpg" data-atropos-offset="-5" class="img-container" />
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="bottom: 40px;left: 20px;">
+                                    JAIPHAL
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="grid-container">
+            <div class="setorder-1">
+                <div class="atropos des-atropos pattharPhool">
+                    <div class="atropos-scale">
+                        <div class="atropos-rotate">
+                            <div class="atropos-inner">
+                                <img src="./assets/img/10spice-stone-flower-1.jpg" data-atropos-offset="-5" class="img-container" />
+                                <div class="text-over bottomAlign1"  data-atropos-offset="0" style="right: 20px;">
+                                    PATTHAR
+                                </div>
+                                <div class="text-over-2 bottomAlign2"  data-atropos-offset="5" style="right: 20px;">
+                                    PHOOL
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spice-benefits setorder-2">
+                <p class="heading">Patthar Phool</p>
+                <p class="subpara">
+                    Patthar Phool contains a treasure trove of antioxidants that showcase powerful decongestant traits. This is very useful in resolving asthma symptoms of wheezing, chest congestion, breathing difficulty, chest pain and obstruction in the lungs and respiratory passages
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="p-5">
+            <a style="font-size:45px;" href="#item-price">Go to Today's pricing | आज का भाव</a>
+        </div>
+    </section>
+    <section class="px-5">
+        <img src="./assets/img/spices.jpg" alt="" class="w-100">
+    </section>
+
+</body>
+<script src="./atropos/atropos.min.js"></script>
+<script src="./index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script>
+function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      const queryParams = {};
+      for (const [key, value] of params.entries()) {
+        queryParams[key] = value;
+      }
+      return queryParams;
+}
+
+   // Function to populate the page with query parameters
+    function populatePage() {
+        const queryParams = getQueryParams();
+        console.log();
+        
+        const categoryPrice = document.querySelectorAll('.category-price');
+        
+        for (let i = 1; i <= Object.keys(queryParams).length; i++) {
+            const key = `category${i}`;
+            if (queryParams.hasOwnProperty(key)) {
+                categoryPrice[i-1].innerHTML += `Rs. ${queryParams[key]}`;
+            }
+        }
+
+        document.querySelector('.date').innerText = queryParams['date'];
+        
+    }
+
+   // Call the populatePage function when the page loads
+   window.addEventListener("load", populatePage);
+</script>
+</html>
