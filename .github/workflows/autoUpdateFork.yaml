@@ -1,8 +1,6 @@
 name: Auto Update Codebase
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 * * * *' # Run at 12 pm IST everyday
 jobs:
   codebaseUpdate:
     runs-on: ubuntu-latest
